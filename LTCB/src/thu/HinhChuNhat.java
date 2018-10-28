@@ -9,33 +9,28 @@ public class HinhChuNhat {
 
 	public static void main(String[] args) {
 		// Tinh dien tich va chu vi dat nha bac 6 (dai = 4,6, rong 2.1)
-		double dtBac6 = dienTich(4.6, 2.1);
-		double cvBac6 = chuVi(4.6, 2.1);
-		System.out.println("dtBac6 = " + dtBac6);
-		System.out.println("cvBac6 = " + cvBac6);
+		dienTich(4.6, 2.1, "Bac 6");
+		chuVi(4.6, 2.1, "Bac 6");
 
 		// Tinh dien tich va chu vi dat nha minh (dai = 14,6, rong 7.1)
-		double dtMinh = dienTich(14.6, 7.1);
-		double cvMinh = chuVi(14.6, 7.1);
-		System.out.println("dtMinh = " + dtMinh);
-		System.out.println("cvMinh = " + cvMinh);
+		dienTich(14.6, 7.1, "Nha Thu");
+		chuVi(14.6, 7.1, "Nha Thu");
 
 		// Tinh dien tich va chu vi dat nha Dao (dai = 1,6, rong 0.1)
-		double dtDao = dienTich(1.6, 0.1);
-		double cvDao = chuVi(1.6, 0.1);
-		System.out.println("dtDao = " + dtDao);
-		System.out.println("cvDao = " + cvDao);
+		dienTich(1.6, 0.1, "Nha Dao");
+		chuVi(1.6, 0.1, "Nha Dao");
 
 	}
 
-	public static double dienTich(double dai, double rong) {
+	public static double dienTich(double dai, double rong, String ten) {
 		double kq = dai * rong;
+		System.out.println(ten + " dienTich = " + kq);
 		return kq;
 	}
 
-	public static double chuVi(double dai, double rong) {
+	public static double chuVi(double dai, double rong, String ten) {
 		double kq = (dai + rong) * 2;
+		System.out.println(ten + " chuVi = " + kq);
 		return kq;
 	}
-
 }

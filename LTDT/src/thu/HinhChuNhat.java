@@ -6,65 +6,71 @@ public class HinhChuNhat {
 	// camelCase hinhChuNhat, dienTich, chuVi (ten phuong thuc (method), truong
 	// (field) bien variable, object
 	// snake_case chu_vi
-	
+
 	public static void main(String[] args) {
 		// Tinh dien tich va chu vi dat nha bac 6 (dai = 4,6, rong 2.1)
-		HinhChuNhat bac6  = new HinhChuNhat(4.6,2.1);		
-		double dtBac6 = bac6.dienTich();
-		double cvBac6 = bac6.chuVi();
-		System.out.println("dtBac6 = " + dtBac6);
-		System.out.println("cvBac6 = " + cvBac6);
+		HinhChuNhat bac6 = new HinhChuNhat(-4.6, -2.1, "Bac 6");
+		bac6.dienTich();
+		bac6.chuVi();
 
 		// Tinh dien tich va chu vi dat nha minh (dai = 14,6, rong 7.1)
-		HinhChuNhat minh  = new HinhChuNhat(14.6,7.1);
-		double dtMinh = minh.dienTich();
-		double cvMinh = minh.chuVi();
-		System.out.println("dtMinh = " + dtMinh);
-		System.out.println("cvMinh = " + cvMinh);
+		HinhChuNhat minh = new HinhChuNhat(14.6, 7.1, "Nha Thu");
+		minh.dienTich();
+		minh.chuVi();
 
 		// Tinh dien tich va chu vi dat nha Dao (dai = 1,6, rong 0.1)
-		HinhChuNhat dao  = new HinhChuNhat(1.6,0.1);
-		double dtDao = dao.dienTich();
-		double cvDao = dao.chuVi();
-		System.out.println("dtDao = " + dtDao);
-		System.out.println("cvDao = " + cvDao);
-
+		HinhChuNhat dao = new HinhChuNhat(1.6, 0.1, "Nha Dao");
+		dao.dienTich();
+		dao.chuVi();
 	}
-	
-	
+
 	/**
 	 * Field
 	 */
 	public double dai;
-	
+
 	public double rong;
-	
+
+	public String ten;
+
 	/**
-	 * Constructor
-	 * @param dai
-	 * @param rong
+	 * xxxx
+	 * @param dai 1
+	 * @param rong1 2
+	 * @param ten 3
 	 */
-	public HinhChuNhat(double dai, double rong1) {
-		this.dai=dai;
-		rong=rong1;
-	}
-	
-	/**
-	 * Method
-	 * @return
-	 */
-	public double dienTich() {
-		double kq = dai * rong;
-		return kq;
-	}
-	
-	/**
-	 * Method
-	 * @return
-	 */
-	public double chuVi() {
-		double kq = (dai + rong)*2;
-		return kq;
+	public HinhChuNhat(double dai, double rong1, String ten) {
+		if (dai <= 0) {
+			System.out.println("Chieu dai phai > 0");
+			dai = 1;
+		}
+		if (rong1 <= 0) {
+			System.out.println("Chieu dai rong > 0");
+			dai = 1;
+		}
+
+		this.dai = dai;
+		rong = rong1;
+		this.ten = ten;
 	}
 
+	/**
+	 * Method
+	 * 
+	 * @return
+	 */
+	public void dienTich() {
+		double kq = dai * rong;
+		System.out.println(ten + " dienTich = " + kq);
+	}
+
+	/**
+	 * Method
+	 * 
+	 * @return
+	 */
+	public void chuVi() {
+		double kq = (dai + rong) * 2;
+		System.out.println(ten + " chuVi = " + kq);
+	}
 }
