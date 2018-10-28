@@ -26,7 +26,8 @@ public class Diem {
 		y = obj.y;
 	}
 
-	public void nhapDiem() {
+	@SuppressWarnings("resource")
+	public void nhapDiem() {		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Nhap x:");
 		x = sc.nextInt();
@@ -35,7 +36,7 @@ public class Diem {
 	}
 
 	public void hienThi() {
-		System.out.println("(" + x + "," + y + ")");
+		System.out.println(toString());
 	}
 
 	public void doiDiem(int dx, int dy) {
