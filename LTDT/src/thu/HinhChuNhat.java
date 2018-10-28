@@ -27,17 +27,18 @@ public class HinhChuNhat {
 	/**
 	 * Field
 	 */
-	public double dai;
+	private double dai;
 
-	public double rong;
+	private double rong;
 
-	public String ten;
+	private String ten;
 
 	/**
 	 * xxxx
-	 * @param dai 1
+	 * 
+	 * @param dai   1
 	 * @param rong1 2
-	 * @param ten 3
+	 * @param ten   3
 	 */
 	public HinhChuNhat(double dai, double rong1, String ten) {
 		if (dai <= 0) {
