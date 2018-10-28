@@ -41,5 +41,6 @@ public class Diem {
 		System.out.print("toa do A:");
 		a.in();
 		System.out.print("toa do B:" + b);
+		System.out.print("toa do C:" + c);
 	}
 }
