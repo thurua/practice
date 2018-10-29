@@ -1,6 +1,6 @@
 package toan;
 
-public class HinhChuNhat extends Hinh implements HinhHoc {
+public class HinhChuNhat extends Hinh  {
 	private float a;
 	private float b;
 

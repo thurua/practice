@@ -1,6 +1,6 @@
 package toan;
 
-public class HinhTron extends Hinh implements HinhHoc {
+public class HinhTron extends Hinh  {
 	private float r;
 
 	public HinhTron(String ten, float r) {
