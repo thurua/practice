@@ -18,7 +18,7 @@ public class DiemMau extends Diem {
 		this.mau = mau;
 	}
 
-	public void hienThi() {		
+	public void hienThi() {
 		System.out.println(toString());
 	}
 
