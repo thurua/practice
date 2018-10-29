@@ -54,13 +54,14 @@ public class Diem {
 	}
 
 	public float khoangCach() {
-		float tg = x * x + y * y;
+		float tg = x * x + y * y;// expressions
 		double kq = Math.sqrt(tg);
 
 		return (float) kq;
 	}
 
 	public float khoangCach(Diem d) {
+		// scope variable
 		int x1 = d.giaTriX();
 		int y1 = d.giaTriY();
 
