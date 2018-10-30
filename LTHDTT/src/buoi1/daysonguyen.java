@@ -19,7 +19,7 @@ public class daysonguyen {
 		x=sc.nextInt();
 		for (int e:a)
 			if (e==x) count ++;
-		System.out.println("so phan tu duoc tim thay:" +count);
+		System.out.println("so phan tu tim thay: " +count);
 		for (int i=0;i<n-1;i++)
 			for(int j=i+1;j<n;j++){
 				if(a[i]<a[j]){
