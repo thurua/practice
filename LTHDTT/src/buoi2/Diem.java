@@ -17,18 +17,44 @@ public class Diem {
 
 	public void nhapDiem() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("nhap x:");
+		System.out.print("nhap x:");
 		x = sc.nextInt();
-		System.out.println("nhap y:");
+		System.out.print("nhap y:");
 		y = sc.nextInt();
 
 	}
+
 	public void hienThi() {
-		System.out.println("("+ x +"," + y +")");
+		System.out.println("(" + x + "," + y + ")");
 	}
+
 	public void doiDiem(int dx, int dy) {
-		x+=dx;
-		y+=dy;
+		x += dx;
+		y += dy;
 	}
-	public int giaTriX
+
+	public int giaTriX() {
+		return x;
+
+	}
+
+	public int giaTriY() {
+		return y;
+	}
+
+	public float khoangCach() {
+		float t = x * x + y * y;
+		double kq = Math.sqrt(t);
+		return (float) kq;
+
+	}
+
+	public float khoangCach(Diem d) {
+		int x1 = d.giaTriX();
+		int y1 = d.giaTriY();
+		float t = (x - x1) * (x - x1) + (y - y1) * (y - y1);
+		double kq1 = Math.sqrt(t);
+		return (float) kq1;
+
+	}
 }
