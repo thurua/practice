@@ -4,34 +4,61 @@ import java.util.Scanner;
 
 public class Bai4 {
 	private static Scanner sc;
-	float nhap(){
 
-		sc= new Scanner (System.in);
-		String s; float f=0.0f;
-		boolean b=true;
-		do{
-			System.out.print("nhap vao mot so thuc:");
-			s=sc.nextLine();
+	float nhap() {
+		sc = new Scanner(System.in);
+		String s;
+		float kq = 0.0f;
+		boolean b = true;
+
+		do {
+			System.out.print("Nhap vao mot so thuc: ");
+			s = sc.nextLine();
 			try {
-				f=Float.parseFloat(s); 
-				b=true;
+				kq = Float.parseFloat(s);
+				b = true;
+			} catch (Exception e) {
+				b = false;
 			}
-			catch(Exception e){
-				b=false;}
-		} while (b==false);
-		return f;
+		} while (!b); // while (b == false)
+		
+		return kq;
 	}
 
+	static float intput() {
+		sc = new Scanner(System.in);
+		String s;
+		float kq = 0f;
+		boolean coLoi = false;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Bai4 obj= new Bai4();
-		float a,b;
-		a=obj.nhap();
-		b=obj.nhap();
-		System.out.print ("tonghaiso="+(a+b));
+		do {
+			if (coLoi) {
+				System.out.print("Nhap lai: ");
+			} else {
+				System.out.print("Nhap vao mot so thuc: ");
+			}
+
+			s = sc.nextLine();
+			try {
+				kq = Float.parseFloat(s);
+				coLoi = false;
+			} catch (Exception e) {
+				coLoi = true;
+			}
+		} while (coLoi); // while (coLoi == true)
+		return kq;
+	}
+
+	public static void main(String[] args) {		
+		float a, b;
+		
+		//Bai4 obj = new Bai4();
+		//a = obj.nhap();
+		// b = obj.nhap();
+		
+		a = Bai4.intput();
+		b = Bai4.intput();
+		System.out.print("tonghaiso=" + (a + b));
 	}
 
 }
-
-
