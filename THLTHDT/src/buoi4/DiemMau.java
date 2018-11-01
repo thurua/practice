@@ -6,6 +6,10 @@ public class DiemMau extends Diem {
 	private String mau; // field
 
 	public DiemMau() {
+		//super(-1, -1);
+		//mau=""; //empty blank
+		
+		this(-1,-1,"");
 	}
 
 	public DiemMau(int x, int y, String mau) {
