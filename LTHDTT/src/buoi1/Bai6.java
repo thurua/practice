@@ -13,7 +13,7 @@ public class Bai6 {
 				System.out.println("Kiem tra tiep --> ");
 			}
 
-			float a = Bai4.intput();
+			float a = Bai4.input();
 			int b = (int) a;
 
 			ketThuc = b == 0 || b == 1;
@@ -22,6 +22,8 @@ public class Bai6 {
 			boolean kq = ktSoNguyenTo(b);
 			String tg = kq ? " LA" : " KHONG la";
 			System.out.println(tg + " so nguyen to");
+			
+			convertBinary(b);
 		} while (!ketThuc);
 	}
 
@@ -40,5 +42,19 @@ public class Bai6 {
 		}
 
 		return dem == 1;
+	}
+
+	public static void convertBinary(int num) {
+		int binary[] = new int[40];
+		int index = 0;
+
+		while (num > 0) {
+			binary[index++] = num % 2; // lay phan du
+			num = num / 2; // lay phan nguyen
+		}
+		
+		for (int i = index - 1; i >= 0; i--) {
+			System.out.print(binary[i]);
+		}
 	}
 }

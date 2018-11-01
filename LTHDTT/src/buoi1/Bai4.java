@@ -25,7 +25,7 @@ public class Bai4 {
 		return kq;
 	}
 
-	static float intput() {
+	static float input() {
 		sc = new Scanner(System.in);
 		String s;
 		float kq = 0f;
@@ -56,8 +56,8 @@ public class Bai4 {
 		//a = obj.nhap();
 		// b = obj.nhap();
 		
-		a = Bai4.intput();
-		b = Bai4.intput();
+		a = Bai4.input();
+		b = Bai4.input();
 		System.out.print("tonghaiso=" + (a + b));
 	}
 
