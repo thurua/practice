@@ -56,11 +56,11 @@ public class SinhVien {
 
 		for (int i = 0; i < slHocPhan; i++) {
 			hocPhan[i] = new String();
-			diem[i] = new String();			
-			
+			diem[i] = new String();
+
 			System.out.print("Nhap ten mon thu " + (i + 1) + ": ");
 			hocPhan[i] = sc.nextLine();
-			
+
 			System.out.print("Nhap diem mon hoc: ");
 			diem[i] = sc.nextLine();
 		}
@@ -75,7 +75,7 @@ public class SinhVien {
 		s = "MSSV: " + mssv + " Ho ten: " + hoTen + " Ngay sinh: " + ngaySinh.toString() + " -- ";
 
 		for (int i = 0; i < slHocPhan; i++) {
-			s = s + hocPhan[i] + ": " +diem[i] +"  ";			
+			s = s + hocPhan[i] + ": " + diem[i] + "  ";
 		}
 
 		return s;

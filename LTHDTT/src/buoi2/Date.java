@@ -29,11 +29,12 @@ public class Date {
 	public void in() {
 		System.out.print(toString());
 	}
-	
+
 	public String toString() {
-		String t=ngay + "/" + thang + "/" + nam;
+		String t = ngay + "/" + thang + "/" + nam;
 		return t;
 	}
+
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
 		do {
@@ -52,9 +53,12 @@ public class Date {
 		if (nam % 4 == 0) {
 			mangNgay[2] = 29;
 		}
-		if (nam > 0 && thang > 0 && thang < 13 && ngay <= mangNgay[thang] && ngay > 0) {
+		
+		boolean tg = nam > 0 && thang > 0 && ngay > 0;
+		if (tg && thang < 13 && ngay <= mangNgay[thang]) {
 			kq = true;
 		}
+		
 		return kq;
 	}
 
