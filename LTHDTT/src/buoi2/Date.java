@@ -14,17 +14,26 @@ public class Date {
 		ngay = thang = nam = 0;
 	}
 
-	public Date(int ng, int t, int n) {
-		ngay = ng;
+	public Date(int ngay, int t, int n) {
+		this.ngay = ngay;
 		thang = t;
 		nam = n;
 	}
 
-	public void in() {
-		System.out.print(ngay + "/" + thang + "/" + nam);
-
+	public Date(Date ngay) {
+		this.ngay = ngay.ngay;
+		this.thang = ngay.thang;
+		this.nam = ngay.nam;
 	}
 
+	public void in() {
+		System.out.print(toString());
+	}
+	
+	public String toString() {
+		String t=ngay + "/" + thang + "/" + nam;
+		return t;
+	}
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
 		do {
