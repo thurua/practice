@@ -1,0 +1,31 @@
+6  8 36 + 64
+8  6 = 48
+
+Max SL hoc phan = 55 [0-54]
+
+Nhap SL hoc phan = 55 -> ok
+Nhap SL hoc phan = 56 -> no ok
+
+HocPhan    Diem
+0	Toan	1
+1	Ly		2
+2	Hoa		3
+SL hoc phan = 3
+
+
+Xoa Ly
+
+0	Toan	1
+1	Hoa		3
+2	Hoa		3
+SL hoc phan = 2
+
+
+
+SinhVien                       a                           =                                         new                     SinhVien();
+ 
+Data type user define    object name (ten doi tuong)    assignment operator (toan tu gan)   creating an object (tao doi tuong)    constructor (phuong thuc xay dung)
+
+
+int                           n                           =                                         10;
+Data type primitive    variable name (ten doi tuong)    assignment operator (toan tu gan)   value (gia tri)
