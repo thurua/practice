@@ -29,3 +29,14 @@ Data type user define    object name (ten doi tuong)    assignment operator (toa
 
 int                           n                           =                                         10;
 Data type primitive    variable name (ten doi tuong)    assignment operator (toan tu gan)   value (gia tri)
+
+Stack - ngan xep Vao Truoc Ra sau FILO
+Queue - hang doi Vao Truoc Ra truoc FIFO
+
+-------------------------------------
+->	H	G	F	E	D	C	B	A	|
+-------------------------------------
+
+-------------------------------------
+->	H	G	F	E	D	C	B	A	->
+-------------------------------------
