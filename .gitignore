@@ -1,5 +1,5 @@
-.exe
-.class
+*.exe
+*.class
 bin
 /target/
 !.mvn/wrapper/maven-wrapper.jar
