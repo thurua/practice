@@ -10,32 +10,30 @@ typedef struct{
 }Stack;
 
 void Make_Null_Stack(Stack *S){
-	(*S).Top_idx=MaxLength;
-	
-	printf("Top_idx 111  %d \n",S->Top_idx);
+	S->Top_idx=MaxLength;
+	printf("Top_idx Make_Null_Stack  %d \n",S->Top_idx);
+}
+
+void Make_Null_Stack2(Stack &S){
+	S.Top_idx=MaxLength;
+	printf("Top_idx Make_Null_Stack2  %d \n",S.Top_idx);
+}
+
+int Empty_Stack(Stack S){
+	return (S.Top_idx==MaxLength);
 }
 
 int main(){
-	Stack  i, *p;	
-	p = &i;
+	Stack  i, j;	
 	
-	Make_Null_Stack();
-	printf("Top_idx 222  %d \n",(*p).Top_idx);
+	Make_Null_Stack(&i);
+	Make_Null_Stack2(j);
+	printf("Top_idx i  %d \n",i.Top_idx);
+	printf("Top_idx j  %d \n",j.Top_idx);
 	
+	int x=	Empty_Stack(i);
+	printf("Empty_Stack i  %d \n",x);
 	
-	
-	
-	
-	
-	printf("Kich thuoc i %d \n", sizeof(i));
-	printf("Kich thuoc p %d \n", sizeof(p));
-	
-	int  i1, *p1;
-	printf("Kich thuoc i1 %d \n", sizeof(i1));
-	printf("Kich thuoc p1 %d \n", sizeof(p1));
-
-	double  i2, *p2;
-	printf("Kich thuoc i2 %d \n", sizeof(i2));
-	printf("Kich thuoc p2 %d \n", sizeof(p2));
-
-	}
+	int y=	Empty_Stack(j);
+	printf("Empty_Stack j  %d \n",y);
+}
