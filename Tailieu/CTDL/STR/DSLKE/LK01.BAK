@@ -1,0 +1,110 @@
+/* DANH SACH LIEN KET.
+Bai 1: cho danh sach lien ket chua cac so nguyen.
+	Hien thi phan giao cua 2 danh sach.
+	Hien thi phan hoi cua 2 danh sach.
+	Hieu cua danh sach 1 voi danh sach 2.
+	(Ghi chu: khong tao danh sach moi.)
+
+Ngay 11/07/2007, viet: Nguyen Van Toan, tai: KOS GRE.
+Ngay 19/07/2008,  sua: Nguyen Van Toan, tai: KOS GRE.
+*/
+
+#include <stdio.h>
+#include <conio.h>
+#include <alloc.h>
+#include <stdlib.h>
+
+typedef struct ds
+{
+	int nut;
+	ds *tiep;
+} *ctds;
+
+ctds nutmoi (int x); // tao nut moi. //
+void themdau (ctds *dau, int x); // them dau danh sach. //
+void themcuo (ctds *dau, int x); // them cuoi danh sach.  //
+void duyet (ctds dau); // duyet danh sach.                 //
+int tim (ctds dau, int x); // tim x co trong danh sach.     //
+
+void main () /*- - - - - - - - - -*/
+{
+	textmode (3); clrscr ();
+	ctds ds1 = NULL; // khoi tao danh sach.
+	/*int n, x, i;
+	printf("Nhap so fan tu: "); scanf("%d", &n);
+	for(i = 0; i < n; i++)
+	{
+		printf("Nhap nut thu %d: ", i + 1);
+		scanf("%d", &x);
+		themdau(&ds1, x);
+	}
+	*/
+	/*ctds ds2 = NULL; // khoi tao danh sach.
+	*/
+	//randomize ();
+
+	for (int i = 0; i < 10; i++)
+	{
+		themcuo (&ds1, i);
+		//themdau (&ds2, random (35) - random (35));
+	}
+
+	printf ("Danh sach 1 luc dau: "); duyet (ds1); // duyet danh sach.
+	int x;
+	printf("\nNhap gia tri can tim: "); scanf("%d", &x);
+	printf("Tim thay tai vi tri: %d" , tim(ds1, x));
+	getch (); return;
+} /*- - - - - - - - - -*/
+
+// Tao nut moi.
+ctds nutmoi (int x)
+{
+	ctds p = (ctds) malloc (sizeof (ds));
+	p->nut = x;
+	return p;
+}
+
+// Them dau danh sach.
+void themdau (ctds *dau, int x)
+{
+	ctds p = nutmoi (x);
+	p->tiep = *dau; // nut moi chi toi dau.
+	*dau = p; // thiet lap dau con tro dau.
+}
+
+// Them cuoi danh sach.
+void themcuo (ctds *dau, int x)
+{
+	if (*dau == NULL) *dau = nutmoi (x);
+	else
+	{
+		ctds p = *dau, q = nutmoi (x);
+		while (p->tiep != NULL) p = p->tiep;
+		p->tiep = q; // thiet lap lien ket.
+	}
+}
+
+// Duyet danh sach
+void duyet (ctds dau)
+{
+	ctds p = dau;
+	while (p != NULL)
+	{
+		printf ("%d ", p->nut);
+		p = p->tiep;
+	}
+}
+
+// Tim x co trong danh sach.
+int tim (ctds dau, int x)
+{
+	int i = 0;
+	ctds p = dau;
+	while (p != NULL)
+	{
+		if (p->nut == x) return i;
+		p = p->tiep;
+		i++;
+	}
+	return -1; // tim khong thay.
+}
