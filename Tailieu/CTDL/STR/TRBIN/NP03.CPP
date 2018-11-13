@@ -25,9 +25,10 @@ char ktr (ctnut goc); // kiem tra cay nhi phan can bang.
 
 void LNR (ctnut goc); // duyet theo thu tu giua.
 
-void main () /*- - - - - - - - - -*/
+int main () /*- - - - - - - - - -*/
 {
-	textmode (3); char chon; int x;
+	//textmode (3);
+	 char chon; int x;
 	ctnut goc = NULL; // khoi tao cay.
 	randomize (); // khoi dong che do ngau nhien.
 	
@@ -39,7 +40,7 @@ void main () /*- - - - - - - - - -*/
 	
 	if (ktr (goc)) printf ("\nCay nhi phan hoan toan can bang!");
 	else printf ("\nCay nhi phan khong can bang!");
-	getch (); return;
+	getch (); return 0;
 } /*- - - - - - - - - -*/
 
 // Tao nut la.

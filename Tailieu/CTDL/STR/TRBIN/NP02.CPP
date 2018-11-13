@@ -12,7 +12,7 @@ Ngay 19/07/2008,  sua: Nguyen Van Toan, tai: KOS GRE.
 
 #include <stdio.h>
 #include <conio.h>
-#include <alloc.h>
+#include <malloc.h>
 
 typedef struct np
 {
@@ -31,9 +31,10 @@ ct tim (ct goc, int x); // tim nut x trong cay.
 ct cha (ct goc, ct p); /* tim nut cha cua nut p. Nut p
 phai khac nut goc va nut p phai ton tai.*/
 
-void main () /*- - - - - - - - - -*/
+int main () /*- - - - - - - - - -*/
 {
-	textmode (3); char chon; int x;
+	//textmode (3); 
+	char chon; int x;
 	ct c, p; // nut cha va nut con.
 	ct goc = NULL; // khoi tao cay.
 
@@ -46,7 +47,9 @@ void main () /*- - - - - - - - - -*/
 	printf ("0. Ket thuc\n");
 
 	printf ("Chon cong viec: "); chon = getche ();
-	if (chon == '0') return; // ket thuc.
+	if (chon == '0') {
+		return 0; // ket thuc.
+	}
 	if (chon < '0' || chon > '4')
 	{
 		printf ("\n\n");
@@ -87,6 +90,7 @@ void main () /*- - - - - - - - - -*/
 			else printf ("Khong phai la cay nhi phan tim kiem!\n");
 	}
 	printf ("\n"); goto batdau;
+	return 0;
 } /*- - - - - - - - - -*/
 
 // Tao nut la.
@@ -113,13 +117,22 @@ char them (ct *goc, int x)
 		do
 		{
 			p = q; // chay theo sau nut q.
-			if (x == p->nut) return 0; // them khong duoc.
-			if (x < p->nut) q = p->trai; else q = p->phai;
+			if (x == p->nut)
+			{ 
+				return 0; // them khong duoc.
+			}
+			
+			if (x < p->nut) {
+				q = p->trai; 
+			} else{
+				q = p->phai;
+			}
 		} while (q != NULL);
 		
 		if (x < p->nut)
 		{
 			p->trai = nutla (x);
+			//p=&i
 			return 1; // them ben trai.
 		}
 		else

@@ -7,7 +7,7 @@ Ngay 19/07/2008,  sua: Nguyen Van Toan, tai: KOS GRE.
 
 #include <stdio.h>
 #include <conio.h>
-#include <alloc.h>
+#include <malloc.h>
 
 typedef struct np
 {
@@ -20,9 +20,10 @@ void NLR (ct goc); // duyet thu tu truoc.
 void LNR (ct goc); // duyet thu tu giua.
 void LRN (ct goc); // duyet thu tu sau.
 
-void main () /*- - - - - - - - - -*/
+int main () /*- - - - - - - - - -*/
 {
-	textmode (3); clrscr ();
+	//textmode (3); 
+	//clrscr ();
 	ct goc = NULL; // khoi tao cay.
 	goc = cay (12, cay (4, cay (32, NULL, NULL), cay (8, cay (37, NULL, NULL), NULL)), cay (9, cay (14, cay (4, NULL, NULL), cay (3, NULL, NULL)), NULL));
 	printf ("\t\t\t\t<CHUONG TRINH>\n");
@@ -30,7 +31,7 @@ void main () /*- - - - - - - - - -*/
 	printf ("\nThu tu truoc:"); NLR (goc);
 	printf ("\nThu  tu giua:"); LNR (goc);
 	printf ("\nThu  tu  sau:"); LRN (goc);
-	getch (); return;
+	getch (); return 0;
 } /*- - - - - - - - - -*/
 
 // Tao cay nhi phan.
