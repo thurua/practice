@@ -26,6 +26,7 @@ ct xoa (ct goc, ct p); /* xoa nut p. Nut p phai ton tai,
 tra ve nut the mang cua nut p.*/
 void LNR (ct goc); // duyet theo thu tu giua.
 char ktr (ct goc); // kiem tra cay nhi phan tim kiem.
+void xoa1 (ct goc, int x); // xoa nut p. Nut p phai ton tai
 
 ct tim (ct goc, int x); // tim nut x trong cay.
 ct cha (ct goc, ct p); /* tim nut cha cua nut p. Nut p
@@ -44,13 +45,14 @@ int main () /*- - - - - - - - - -*/
 	printf ("2. Xoa mot nut\n");
 	printf ("3. Thu tu giua\n");
 	printf ("4. Kiem tra cay\n");
+	printf ("5. Xoa mot nut cach 2\n");
 	printf ("0. Ket thuc\n");
 
 	printf ("Chon cong viec: "); chon = getche ();
 	if (chon == '0') {
 		return 0; // ket thuc.
 	}
-	if (chon < '0' || chon > '4')
+	if (chon < '0' || chon > '5')
 	{
 		printf ("\n\n");
 		goto batdau;
@@ -88,6 +90,10 @@ int main () /*- - - - - - - - - -*/
 		case '4':
 			if (ktr (goc)) printf ("Day la cay nhi phan tim kiem!\n");
 			else printf ("Khong phai la cay nhi phan tim kiem!\n");
+		case '5':
+			printf ("Nhap gia tri nut can xoa: "); scanf ("%d", &x);
+			xoa1(goc,x);
+			
 	}
 	printf ("\n"); goto batdau;
 	return 0;
@@ -223,4 +229,51 @@ ct cha (ct goc, ct p)
 		if (p->nut < sau->nut) truoc = sau->trai; else truoc = sau->phai;
 	} while (truoc != p);
 	return sau; // da tim thay.
+}
+
+void xoa1 (ct goc, int x)
+{
+	ct p = tim (goc, x);
+	if (p == NULL){
+		printf ("Khong xoa duoc, tim khong thay %d...\n", x);
+		return;
+	}			
+			
+	ct tm; // nut the mang.
+	if (p->trai == NULL) tm = p->phai; // nut the mang nam ben phai.
+	else if (p->phai == NULL) tm = p->trai; // nut the mang nam ben trai.
+	else // nut la hoac nut co 2 con.
+	{
+		// Nut the mang la nut trai nhat cua cay ben phai.
+		tm = p->phai; // di sang phai.
+		ct ch = p; // nut cha cua nut tm.
+		
+		// Tim nut trai nhat.
+		while (tm->trai != NULL)
+		{
+			ch = tm;
+			tm = tm->trai;
+		}
+
+		if (ch != p)
+		{
+			tm->trai = p->trai;
+			ch->trai = tm->phai;
+			tm->phai = p->phai;
+		}
+		else tm->trai = p->trai;
+	}
+	
+	
+	// Noi lien ket			
+	if (p == goc) goc = xoa (goc, p);
+	else
+	{
+		ct c = cha (goc, p);
+		if (c->trai == p) c->trai = xoa (goc, p);
+		if (c->phai == p) c->phai = xoa (goc, p);
+	}
+			
+	free (p); 
+	return;
 }
