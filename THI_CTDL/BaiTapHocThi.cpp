@@ -49,10 +49,10 @@ void InsertList (ElementType x, Position p,  List &L){
 		printf("Vi tri khong hop le");
 	}
 	else{
-		for (int i=L.Last; i>=p; i--){
-			L.Elements[i]=L.Elements[i-1];
-			L.Elements[p-1]=x;
+		for (int i=L.Last; i>p; i--){
+			L.Elements[i]=L.Elements[i-1];			
 		}
+		L.Elements[p-1]=x;
 		L.Last++;
 	}
 	
